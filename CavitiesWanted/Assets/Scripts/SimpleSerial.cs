@@ -74,19 +74,23 @@ public class SimpleSerial : MonoBehaviour
             if (strEul.Length > 0)
             {
                 float potA = float.Parse(strEul[0]);
-                float readings = map(potA, 993, 981, 0, 35);
+                //readingSmoothed = Mathf.Lerp(readingSmoothed, potA, Time.deltaTime * 0.01F);
+                float readings = map(potA, 0, 20, 0, 35);
                 //Debug.Log("potA " + potA);
-                Debug.Log("readings " + readings);
+                //Debug.Log("readings " + readings);
+
 
                 this.transform.localRotation = Quaternion.Euler(new Vector3(readings, 0f, 0f));
 
-                if (readings <= 25f)
+                if (readings > 25f)
                 {
                     chomp = true;
+                    //Debug.Log("chomp is true");
                 }
                 else
                 {
                     chomp = false;
+                    //Debug.Log("chomp is false");
                 }
             }
         }

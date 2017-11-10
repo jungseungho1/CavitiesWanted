@@ -12,7 +12,7 @@ public class Rotate : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         center = new Vector3(0, 0, 0);
-        axis = new Vector3(0.5F, 0.5F, 0.5F);
+        //axis = new Vector3(0.5F, 0.5F, 0.5F);
         axis = new Vector3 (0f,1f,0f);
 	}
 	
